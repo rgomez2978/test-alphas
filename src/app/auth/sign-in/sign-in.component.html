@@ -1,0 +1,58 @@
+<div class="card-login-layout row animate__animated animate__fadeIn animate__faster">
+    <!-- Login - left side -->
+    <div class="col-lg-6 d-flex align-items-center ">
+        <div class="d-flex align-items-center align-items-center">
+            <img class="img-fluid p-5" src="../assets/img/undraw_programming_re_kg9v.svg" alt="">
+        </div>
+    </div>
+
+    <!-- Login - rigth side-->
+    <div class="col-lg-6 align-items-center">
+        <div class="card-login">
+            <div class="card-login-header px-lg-5">
+                <h2 class="card-login-heading">LOGIN</h2>
+            </div>
+            <div class="card-login-body px-lg-5 mt-1">
+                <form id="loginForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <div class="form-floating input-group ">
+                            <input class="form-control" id="floatingInput" type="email" placeholder="name@example.com"
+                                formControlName="fcn_email" required>
+                            <label for="floatingInput">Email address</label>
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <app-form-error [form]="form" [fcn]="'fcn_email'" [type]="'email'" [min]="3"
+                            [msj]="'Please enter an email.'"></app-form-error>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-floating input-group ">
+                            <input class="form-control" id="floatingPassword" [type]="typePasswd" placeholder="Password"
+                                formControlName="fcn_password" required>
+                            <label for="floatingPassword">Password</label>
+                            <span class="input-group-text" id="basic-addon1">
+                                <i (click)="showPassword()" [ngClass]="showpasswd ? 'bi bi-eye':'bi bi-eye-slash'"
+                                    class="cursorpointer"></i>
+                            </span>
+                        </div>
+                        <app-form-error [form]="form" [fcn]="'fcn_password'" [type]="'password'" [min]="8" [max]="15"
+                            [msj]="'Please enter a password.'"></app-form-error>
+                    </div>
+
+
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                            formControlName="fcn_rememberme">
+                        <label class="form-check-label" for="remember">Remember me</label>
+                    </div>
+                    <button [disabled]="!submitted" class="btn btn-primary mt-3" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="card-login-footer px-lg-5 py-lg-4">
+                <div class="text-sm text-muted">
+                    Don't have an account?
+                    <a routerLink="/signup" routerLinkActive="active">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>

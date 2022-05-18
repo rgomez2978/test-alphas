@@ -1,0 +1,27 @@
+npm install sweetalert2 --save-dev
+npm install animate.css --save-dev
+npm install angular2-uuid --save-dev
+npm i bootstrap-icons --save-dev
+
+
+ng g m pages --module app.module
+ng g m shared --module app.module
+ng g m auth --module app.module
+ng g guard auth/guards/auth --skipTests
+
+ng g c shared/loading --module shared.module --skipTests=true
+ng g c shared/list --module shared.module --skipTests=true
+ng g c shared/navbar --module shared.module --skipTests=true
+ng g c shared/form-error --module shared.module --skipTests=true
+
+ng g c auth/sign-in --module auth.module --skipTests=true
+ng g c auth/sign-up --module auth.module --skipTests=true
+ng g c pages/home --module pages.module --skipTests=true
+
+ng g i models/login interface
+ng g i models/register interface
+ng g i models/users interface
+
+ng g s services/auth --flat --skipTests=true
+ng g s services/form --flat --skipTests=true --dryRun
+ng g s services/storage --flat --skipTests=true

@@ -1,0 +1,8 @@
+<div  [ngClass]="showAuth ? 'page-holder align-items-center py-4 myBackground vh-100' : 'myBackground'">
+  <div  [ngClass]="showAuth?'container':''">
+    <div [ngClass]="showAuth ? 'row align-items-center p-10' : ' vh-100'">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

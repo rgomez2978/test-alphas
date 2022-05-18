@@ -1,0 +1,23 @@
+<!-- Start Mensaje de error - requeridos -->
+<small *ngIf="invalidValue(form, fcn) && getLength(form, fcn) == 0" class="text-danger">
+    {{msj}}
+</small>
+
+<!-- Start Mensaje de error - minLength y maxLength -->
+<small
+    *ngIf="(invalidValue(form, fcn) && type !== 'phone' && getLength(form, fcn) > 0) && (min > getLength(form, fcn) || max < getLength(form, fcn)) "
+    class="text-danger">
+    You must enter a minimum of {{min}} and a maximum of {{max}} characters.
+</small>
+
+<!-- Start Mensaje de error - email -->
+<small *ngIf="(invalidValue(form, fcn) && getLength(form, fcn) > 0) && (type === 'email' ) "
+    class="text-danger">
+    Please enter an email in the correct format (example@example.com)
+</small>
+
+<!-- Start Mensaje de error - Username -->
+<small *ngIf="(invalidValue(form, fcn) && getLength(form, fcn) > 0) && ( type === 'password') && (min > getLength(form, fcn) || max < getLength(form, fcn)) "
+    class="text-danger">
+    Please enter a valid password.
+</small>

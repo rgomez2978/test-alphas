@@ -1,0 +1,60 @@
+<div class="card-login-layout row animate__animated animate__fadeIn animate__faster">
+    <!-- Login - left side -->
+    <div class="col-lg-6 d-flex align-items-center">
+        <div class="align-items-center">
+            <img class="img-fluid  " src="../assets/img/undraw_proud_coder_re_exuy.svg" alt="">
+        </div>
+    </div>
+
+    <!-- Login - rigth side-->
+    <div class="col-lg-6 align-items-center">
+        <div class="card-login">
+            <div class="card-login-header px-lg-5">
+                <h2 class="card-login-heading">SIGN UP</h2>
+            </div>
+            <div class="card-login-body px-lg-5 mt-1">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="firstname" type="text" placeholder="Firstname"
+                            formControlName="fcn_firstname" required>
+                        <label for="firstname">Firstname</label>
+                        <app-form-error [form]="form" [fcn]="'fcn_firstname'" [type]="'text'" [min]="3" [max]="35"
+                            [msj]="'Please enter a first name.'"></app-form-error>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="lastname" type="text" placeholder="Lastname"
+                            formControlName="fcn_lastname" required>
+                        <label for="lastname">Lastname</label>
+                        <app-form-error [form]="form" [fcn]="'fcn_lastname'" [type]="'text'" [min]="3" [max]="35"
+                            [msj]="'Please enter a last name.'"></app-form-error>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                            formControlName="fcn_email" required>
+                        <label for="email">Email address</label>
+                        <app-form-error [form]="form" [fcn]="'fcn_email'" [type]="'email'" [min]="3"
+                            [msj]="'Please enter an email.'"></app-form-error>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="password" type="password" placeholder="Password"
+                            formControlName="fcn_password" required>
+                        <label for="password">Password</label>
+                        <app-form-error [form]="form" [fcn]="'fcn_password'" [type]="'password'" [min]="8" [max]="15"
+                            [msj]="'Please enter a password.'"></app-form-error>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="logged" type="hidden" placeholder="logged"
+                            formControlName="fcn_logged">
+                    </div>
+                    <div class="form-group mt-5">
+                        <button [disabled]="!submitted" class="btn btn-primary" id="regidter" type="submit"
+                            name="registerSubmit">Register</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-login-footer px-lg-5 py-lg-4">
+                <div class="text-sm text-muted">Already have an account? <a routerLink="/signin">Login</a>.</div>
+            </div>
+        </div>
+    </div>
+</div>
