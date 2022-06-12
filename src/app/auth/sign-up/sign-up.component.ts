@@ -15,10 +15,10 @@ export class SignUpComponent implements OnInit {
   submitted = true;
 
   constructor(
-    private FB: FormBuilder,
-    private router: Router,
-    private authService: AuthService,
-    private formService: FormService
+    private _FB: FormBuilder,
+    private _router: Router,
+    private _authService: AuthService,
+    private _formService: FormService
   ) {}
 
   /**
@@ -38,7 +38,7 @@ export class SignUpComponent implements OnInit {
    * -------------------------------------------------------
    */
   initForm() {
-    this.form = this.FB.group({
+    this.form = this._FB.group({
       fcn_firstname: [
         '',
         [
@@ -67,7 +67,7 @@ export class SignUpComponent implements OnInit {
         [Validators.required, Validators.pattern('^[a-zA-Z0-9_.-]{8,15}$')],
       ],
       fcn_logged: ['false', []],
-      fcn_id: [this.authService.generateUUID(), []],
+      fcn_id: [this._authService.generateUUID(), []],
       fcn_rememberme: ['false', []],
     });
   }
@@ -80,7 +80,7 @@ export class SignUpComponent implements OnInit {
    * -------------------------------------------------------
    */
   validateForm(fgroup: FormGroup) {
-    this.formService.validateForm(fgroup);
+    this._formService.validateForm(fgroup);
   }
 
   /**
@@ -91,12 +91,10 @@ export class SignUpComponent implements OnInit {
    * -------------------------------------------------------
    */
   onSubmit() {
-
     this.validateForm(this.form);
     if (this.form.status == 'VALID') {
       this.submitted = false;
       this.form.disable();
-      this.authService.addUser(this.form.value); // save on localstorage
       Swal.fire({
         title: 'Are you sure to register the user?',
         text: "You won't be able to revert this!",
@@ -113,10 +111,11 @@ export class SignUpComponent implements OnInit {
             icon: 'success',
             timer: 1500,
           });
+          this._authService.addUser(this.form.value); // save on localstorage
           this.submitted = true;
           this.form.reset();
           setTimeout(() => {
-            this.router.navigate(['/signin']);
+            this._router.navigate(['/signin']);
           }, 1500);
         } else {
           this.submitted = true;

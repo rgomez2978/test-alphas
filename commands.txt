@@ -11,6 +11,7 @@ ng g guard auth/guards/auth --skipTests
 
 ng g c shared/loading --module shared.module --skipTests=true
 ng g c shared/list --module shared.module --skipTests=true
+ng g c shared/list-item --module shared.module --skipTests=true
 ng g c shared/navbar --module shared.module --skipTests=true
 ng g c shared/form-error --module shared.module --skipTests=true
 

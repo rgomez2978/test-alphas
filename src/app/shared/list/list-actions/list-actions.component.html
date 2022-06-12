@@ -1,0 +1,7 @@
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#viewItemModal"
+        (click)="onShowView(item)">View</button>
+    <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editItemModal"
+        (click)="onShowEdit(item)">Edit</button>
+    <button type="button" class="btn btn-sm btn-danger" (click)="onDelete(item)">Delete</button>
+</div>

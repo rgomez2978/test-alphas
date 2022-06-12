@@ -1,27 +1,48 @@
-# TestAlphas
+![styles](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![styles](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![styles](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![styles](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![styles](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
+![styles](https://img.shields.io/badge/JSON-gray?style=for-the-badge&logo=json&logoColor=white)
+![styles](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.17.
+# Test - Alphas Technology
 
-## Development server
+Teste para la empresa Alphas Technology, elaborado en [Angular CLI](https://github.com/angular/angular-cli) version 12.2.17, Typescript, Bootstrap, JSON, Localstorage.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+[DEMO](https://rgomez2978.github.io/test-alaphas/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalación de Librerias
 
-## Build
+A continuación se indican las librerias necesarias para la ejecución del proyecto.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    npm install
+    ng add angular-cli-ghpages
 
-## Running unit tests
+## Levantar proyecto Angular
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ng serve
+    ng serve -o
 
-## Running end-to-end tests
+## Levantar proyecto JSON-SERVER
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    npm run serverAPI
 
-## Further help
+## Exportar proyecto - Build
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ejecute el comando `ng build` para exportar el proyecto. Al exportar el proyecto se almacenarán en el directorio `docs/`. Utilice el flag `--base-href` para exportar hacia produccion.
+
+    ng build --base-href=https://rgomez2978.github.io/test-alphas/
+
+
+
+## Exportar proyecto en rama githubpage
+
+Ejecute el comando `ng deploy` para exportar el proyecto. Al exportar el proyecto se almacenarán en el directorio `docs/`. Utilice el flag `--base-href` para exportar hacia produccion.
+
+    ng deploy --base-href=https://rgomez2978.github.io/test-alphas/
+
+
+
+## Screenshots del proyecto

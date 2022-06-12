@@ -1,4 +1,4 @@
-export class Users {
+export interface Users {
   fcn_id: string;
   fcn_email: string;
   fcn_password: string;

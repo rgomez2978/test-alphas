@@ -9,3 +9,10 @@
     padding: 2rem;
   }
 
+.item-label-view{
+  font-weight: bold;
+  span{
+    font-weight: normal !important;
+    margin-left: 10px;
+  }
+}

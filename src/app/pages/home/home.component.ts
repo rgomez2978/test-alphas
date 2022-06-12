@@ -21,4 +21,9 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     this.showNavbar = JSON.parse(localStorage.getItem('showNavbar') || '{}');
     this.cd.detectChanges(); // detecta cambios en la vista
   }
+
+
+
+
+
 }

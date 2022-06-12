@@ -11,12 +11,14 @@
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Username</th>
+                <th scope="col">Email</th>
                 <th scope="col">Phone</th>
+                <th scope="col">Status</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let item of data">
                 <td scope="row">
                     <label class="control control--checkbox">
                         <input type="checkbox" />
@@ -24,18 +26,116 @@
                     </label>
                 </td>
                 <td>
-                    1392
+                    {{item.id}}
                 </td>
-                <td>Sales Pitch - 2019</td>
+                <td>{{item.name}}</td>
                 <td>
-                    Far far away, behind the word mountains
-                    <small class="d-block">Far far away, behind the word mountains</small>
+                    {{item.username}}
                 </td>
-                <td>+63 983 0962 971</td>
                 <td>
-asdasd
+                    {{item.email}}
+                </td>
+                <td>{{item.phone}}</td>
+                <td>
+                    <span [ngClass]="item.status ? 'badge  bg-success': 'badge  bg-danger'">{{item.status}}</span>
+                </td>
+                <td>
+                    <app-list-actions [item]="item" (onViewData)="getViewData(item)" (onEditData)="getEditData(item)"
+                        (onDeleteData)="deleleData(item)">
+                    </app-list-actions>
                 </td>
             </tr>
         </tbody>
     </table>
+</div>
+
+
+<!-- View Item -->
+<div class="modal fade" id="viewItemModal" tabindex="-1" aria-labelledby="viewItemModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewItemModal">View user</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    <div class="item-label-view">
+                        Name:
+                        <span>{{viewSelected.name}}</span>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <div class="item-label-view">
+                        Username:
+                        <span>{{viewSelected.username}}</span>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <div class="item-label-view">
+                        Email:
+                        <span>{{viewSelected.email}}</span>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <div class="item-label-view">
+                        Phone:
+                        <span>{{viewSelected.phone}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Item -->
+<div class="modal fade"   id="editItemModal" tabindex="-1" aria-labelledby="editItemModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editItemModal">Edit user</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form [formGroup]="form_edit" (ngSubmit)="onSubmit()">
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="text" placeholder="Full name" formControlName="name"
+                            required>
+                        <label for="name">Name</label>
+                        <app-form-error [form]="form_edit" [fcn]="'name'" [type]="'text'" [min]="3" [max]="35"
+                            [msj]="'Please enter a first name.'"></app-form-error>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="username" type="text" placeholder="username"
+                            formControlName="username" required>
+                        <label for="username">Username</label>
+                        <app-form-error [form]="form_edit" [fcn]="'username'" [type]="'text'" [min]="3" [max]="35"
+                            [msj]="'Please enter a username.'"></app-form-error>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                            formControlName="email" required>
+                        <label for="email">Email address</label>
+                        <app-form-error [form]="form_edit" [fcn]="'email'" [type]="'email'" [min]="3"
+                            [msj]="'Please enter an email.'"></app-form-error>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" type="text" placeholder="phone" formControlName="phone"
+                            required>
+                        <label for="phone">Phone</label>
+                        <app-form-error [form]="form_edit" [fcn]="'phone'" [type]="'text'" [min]="3" [max]="35"
+                            [msj]="'Please enter a username.'"></app-form-error>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button [disabled]="submitted" class="btn btn-primary" id="edit" type="submit"
+                        name="edit">Edit</button>
+                    <button type="button" #clickCloseModal class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

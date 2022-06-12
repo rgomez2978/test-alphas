@@ -1,25 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { ListComponent } from '@shared/list/list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from '@shared/loading/loading.component';
 import { FormErrorComponent } from '@shared/form-error/form-error.component';
 import { NavbarComponent } from '@shared/navbar/navbar.component';
+import { ListComponent } from '@shared/list/list.component';
+import { ListActionsComponent } from './list/list-actions/list-actions.component';
 
 @NgModule({
   declarations: [
-    // ListComponent,
     LoadingComponent,
     FormErrorComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListComponent,
+    ListActionsComponent,
   ],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [
-    // ListComponent,
     LoadingComponent,
     FormErrorComponent,
-    NavbarComponent
-  ]
+    NavbarComponent,
+    ListComponent,
+    ListActionsComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
