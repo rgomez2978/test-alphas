@@ -1,10 +1,8 @@
 ![styles](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![styles](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![styles](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![styles](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![styles](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
-![styles](https://img.shields.io/badge/JSON-gray?style=for-the-badge&logo=json&logoColor=white)
-![styles](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![styles](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![styles](https://img.shields.io/badge/JSON-gray?style=for-the-badge)
+![styles](https://img.shields.io/badge/Localstorage-yellow?style=for-the-badge)
 
 # Test - Alphas Technology
 
